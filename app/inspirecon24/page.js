@@ -831,7 +831,7 @@ export default function Page() {
                                 </RadioGroup>
                             </div>
                             <div className='space-y-2'>
-                          
+                          <p className='text-gray-300 text-center'> MUHAMMAD TAQI ARIF GANATRA  Meezan bank  Account Number: 01500108093059 </p>
                                 <Label htmlFor='name'>Name</Label>
                                 <Input
                                     id='name'
