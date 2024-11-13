@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { MapPin, Calendar, Clock } from 'lucide-react';
 import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 import {
     Dialog,
@@ -14,7 +13,7 @@ import {
     DialogTitle,
 } from '@/components/ui/dialog';
 import logo from '@/assets/images/logo.svg';
-import siteBanner from '@/assets/images/banner.jpeg';
+import siteBanner from '@/assets/images/banner.png';
 import banner from '@/assets/images/book-krlo-banner.svg';
 
 export default function Component() {
@@ -110,18 +109,28 @@ export default function Component() {
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
                     <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
                         <div>
-                            <h3 className='text-lg font-semibold mb-4'>
+                            <h3 className='text-lg font-semibold mb-4 text-white'>
                                 Socials
                             </h3>
                             <div className='flex space-x-4'>
-                                <Facebook className='w-6 h-6 text-gray-300 hover:text-white cursor-pointer' />
-                                <Instagram className='w-6 h-6 text-gray-300 hover:text-white cursor-pointer' />
-                                <Linkedin className='w-6 h-6 text-gray-300 hover:text-white cursor-pointer' />
-                                <Twitter className='w-6 h-6 text-gray-300 hover:text-white cursor-pointer' />
+                                <Link
+                                    href='https://www.facebook.com/bookkrlof'
+                                    aria-label='Facebook'
+                                    className='text-gray-300 hover:text-white'
+                                >
+                                    <Facebook className='w-6 h-6' />
+                                </Link>
+                                <Link
+                                    href='https://www.instagram.com/bookkrlo/'
+                                    aria-label='Instagram'
+                                    className='text-gray-300 hover:text-white'
+                                >
+                                    <Instagram className='w-6 h-6' />
+                                </Link>
                             </div>
                         </div>
-                        <div>
-                            <h3 className='text-lg font-semibold mb-4'>
+                        {/* <div>
+                            <h3 className='text-lg font-semibold mb-4 text-white'>
                                 Resources
                             </h3>
                             <ul className='space-y-2'>
@@ -158,16 +167,13 @@ export default function Component() {
                                     </Link>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
                         <div>
-                            <h3 className='text-lg font-semibold mb-4'>
+                            <h3 className='text-lg font-semibold mb-4 text-white'>
                                 Contact
                             </h3>
                             <p className='text-gray-300'>
-                                Help Line: 0309 2502772
-                            </p>
-                            <p className='text-gray-300'>
-                                WhatsApp: 0309 2502772
+                                bookkrlo.info@gmail.com
                             </p>
                         </div>
                         <div>
@@ -184,7 +190,7 @@ export default function Component() {
                                 />
                             </Link>
                             <p className='text-gray-300 mt-2'>
-                                Tickets anywhere anytime!
+                                Event near or far, just book krlo yaar!
                             </p>
                         </div>
                     </div>
