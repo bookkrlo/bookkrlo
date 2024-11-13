@@ -825,17 +825,22 @@ export default function Page() {
                                                 alt='Bank Transfer'
                                                 className='h-12 mb-2'
                                             />
-                                            Bank Transfer
+                                            Bank 
                                         </Label>
                                     </div>
                                 </RadioGroup>
                             </div>
                             <div className='space-y-2'>
-                        <p className="text-gray-300 text-center"> 
+
+                                                    
+                              {paymentMethod === 'bank_transfer' && (
+                                <p className="text-gray-300 text-center"> 
                           MUHAMMAD TAQI ARIF GANATRA <br />
                               Meezan bank <br />
                               Account Number: 01500108093059 
                             </p>
+                            )}                      
+                      
                                 <Label htmlFor='name'>Name</Label>
                                 <Input
                                     id='name'
