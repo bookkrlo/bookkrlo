@@ -260,7 +260,7 @@ export default function Page() {
                         <div className='flex items-center'>
                             <Link
                                 href='/'
-                                className='text-2xl font-bold text-emerald-400'
+                                className='text-2xl font-bold text-primary-400'
                             >
                                 <Image
                                     src={logo}
@@ -294,7 +294,7 @@ export default function Page() {
                             </div>
                         </div>
                         <Button
-                            className='bg-emerald-500 hover:bg-emerald-600 rounded-full'
+                            className='bg-primary-500 hover:bg-primary-600 rounded-full'
                             onClick={() => setIsListEventModalOpen(true)}
                         >
                             List Your Event
@@ -318,7 +318,7 @@ export default function Page() {
             <div className='flex-grow'>
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8'>
                     <div>
-                        <h1 className='text-4xl font-bold mb-2 text-emerald-400'>
+                        <h1 className='text-4xl font-bold mb-2 text-primary-400'>
                             InspireCon'24
                         </h1>
                         <h2 className='text-xl mb-4'>
@@ -378,7 +378,7 @@ export default function Page() {
                                                 className={`flex items-center justify-between p-4 rounded-lg cursor-pointer transition-colors ${
                                                     selectedTicketType ===
                                                     'standard'
-                                                        ? 'bg-emerald-500 bg-opacity-20'
+                                                        ? 'bg-primary-500 bg-opacity-20'
                                                         : 'hover:bg-gray-700'
                                                 }`}
                                             >
@@ -447,7 +447,7 @@ export default function Page() {
                                                 className={`flex items-center justify-between p-4 rounded-lg cursor-pointer transition-colors ${
                                                     selectedTicketType ===
                                                     'pack'
-                                                        ? 'bg-emerald-500 bg-opacity-20'
+                                                        ? 'bg-primary-500 bg-opacity-20'
                                                         : 'hover:bg-gray-700'
                                                 }`}
                                             >
@@ -483,7 +483,7 @@ export default function Page() {
                                         </div>
 
                                         <Button
-                                            className='w-full bg-emerald-500 hover:bg-emerald-600 rounded-full'
+                                            className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
                                             onClick={() => setIsModalOpen(true)}
                                         >
                                             Proceed to Checkout
@@ -497,7 +497,7 @@ export default function Page() {
                         <TabsContent value='details'>
                             <Card className='bg-gray-800 border-gray-700 rounded-3xl'>
                                 <CardContent className='p-6 space-y-4'>
-                                    <h3 className='text-2xl font-bold text-emerald-400'>
+                                    <h3 className='text-2xl font-bold text-primary-400'>
                                         About the Event
                                     </h3>
                                     <p className='text-gray-200'>
@@ -562,7 +562,7 @@ export default function Page() {
 
                     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
                         <h2 className='text-3xl font-bold mb-8'>
-                            <span className='text-emerald-400'>Speakers</span>
+                            <span className='text-primary-400'>Speakers</span>
                         </h2>
                         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
                             {speakers.map((speaker, index) => (
@@ -583,7 +583,7 @@ export default function Page() {
                                         <h3 className='text-lg font-bold text-gray-200 break-words hyphens-auto'>
                                             {speaker.name}
                                         </h3>
-                                        <p className='text-sm text-emerald-400 break-words'>
+                                        <p className='text-sm text-primary-400 break-words'>
                                             {speaker.title}
                                         </p>
                                         {speaker.handle && (
@@ -603,10 +603,10 @@ export default function Page() {
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
                     <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
                         <div>
-                            <h3 className='text-lg font-semibold mb-4 text-white'>
+                            <h3 className='text-lg font-semibold mb-4 text-primary-600 text-center'>
                                 Socials
                             </h3>
-                            <div className='flex space-x-4'>
+                            <div className='flex space-x-4 items-center justify-center'>
                                 <Link
                                     href='https://www.facebook.com/bookkrlof'
                                     aria-label='Facebook'
@@ -663,17 +663,17 @@ export default function Page() {
                             </ul>
                         </div> */}
                         <div>
-                            <h3 className='text-lg font-semibold mb-4 text-white'>
+                            <h3 className='text-lg font-semibold mb-4 text-primary-600 text-center'>
                                 Contact
                             </h3>
-                            <p className='text-gray-300'>
+                            <p className='text-gray-300 text-center'>
                                 bookkrlo.info@gmail.com
                             </p>
                         </div>
-                        <div>
+                        <div className='flex flex-col items-center justify-center space-y-2'>
                             <Link
                                 href='/'
-                                className='text-2xl font-bold text-emerald-400'
+                                className='text-2xl font-bold text-primary-400 text-center'
                             >
                                 <Image
                                     src={logo}
@@ -683,14 +683,14 @@ export default function Page() {
                                     priority
                                 />
                             </Link>
-                            <p className='text-gray-300 mt-2'>
+                            <p className='text-gray-300 mt-2 text-center'>
                                 Event near or far, just book krlo yaar!
                             </p>
                         </div>
                     </div>
                 </div>
             </footer>
-
+                                        
             <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
                 <DialogContent className='bg-gray-800 border-gray-700 text-gray-200 rounded-3xl'>
                     <DialogHeader>
@@ -701,7 +701,7 @@ export default function Page() {
                     {paymentSuccess ? (
                         <div className='space-y-4'>
                             <div className='flex items-center justify-center'>
-                                <CheckCircle className='text-emerald-500 w-16 h-16' />
+                                <CheckCircle className='text-primary-500 w-16 h-16' />
                             </div>
                             <h3 className='text-xl font-semibold text-center'>
                                 Thank you for your purchase!
@@ -741,7 +741,7 @@ export default function Page() {
                                 for details.
                             </p>
                             <Button
-                                className='w-full bg-emerald-500 hover:bg-emerald-600 rounded-full'
+                                className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
                                 onClick={resetForm}
                             >
                                 Close
@@ -757,7 +757,7 @@ export default function Page() {
                             </h3>
                             <p className='text-center'>{paymentError}</p>
                             <Button
-                                className='w-full bg-emerald-500 hover:bg-emerald-600 rounded-full'
+                                className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
                                 onClick={() => setPaymentError(null)}
                             >
                                 Try Again
@@ -782,7 +782,7 @@ export default function Page() {
                                         />
                                         <Label
                                             htmlFor='jazzcash'
-                                            className='flex flex-col items-center justify-between rounded-md border-2 border-gray-700 bg-gray-800 p-4 hover:bg-gray-700 hover:text-white peer-data-[state=checked]:border-emerald-500 [&:has([data-state=checked])]:border-emerald-500'
+                                            className='flex flex-col items-center justify-between rounded-md border-2 border-gray-700 bg-gray-800 p-4 hover:bg-gray-700 hover:text-white peer-data-[state=checked]:border-primary-500 [&:has([data-state=checked])]:border-primary-500'
                                         >
                                             <img
                                                 src='/jazzcash-logo.png'
@@ -800,7 +800,7 @@ export default function Page() {
                                         />
                                         <Label
                                             htmlFor='easypaisa'
-                                            className='flex flex-col items-center justify-between rounded-md border-2 border-gray-700 bg-gray-800 p-4 hover:bg-gray-700 hover:text-white peer-data-[state=checked]:border-emerald-500 [&:has([data-state=checked])]:border-emerald-500'
+                                            className='flex flex-col items-center justify-between rounded-md border-2 border-gray-700 bg-gray-800 p-4 hover:bg-gray-700 hover:text-white peer-data-[state=checked]:border-primary-500 [&:has([data-state=checked])]:border-primary-500'
                                         >
                                             <img
                                                 src='/easypaisa-logo.png'
@@ -818,7 +818,7 @@ export default function Page() {
                                         />
                                         <Label
                                             htmlFor='bank_transfer'
-                                            className='flex flex-col items-center justify-between rounded-md border-2 border-gray-700 bg-gray-800 p-4 hover:bg-gray-700 hover:text-white peer-data-[state=checked]:border-emerald-500 [&:has([data-state=checked])]:border-emerald-500'
+                                            className='flex flex-col items-center justify-between rounded-md border-2 border-gray-700 bg-gray-800 p-4 hover:bg-gray-700 hover:text-white peer-data-[state=checked]:border-primary-500 [&:has([data-state=checked])]:border-primary-500'
                                         >
                                             <img
                                                 src='/bank-transfer-logo.png'
@@ -888,7 +888,7 @@ export default function Page() {
                             )}
                             <Button
                                 type='submit'
-                                className='w-full bg-emerald-500 hover:bg-emerald-600 rounded-full'
+                                className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
                                 disabled={
                                     isProcessing ||
                                     (paymentMethod === 'bank_transfer' &&
@@ -953,7 +953,7 @@ export default function Page() {
                         </div>
                         <Button
                             type='submit'
-                            className='w-full bg-emerald-500 hover:bg-emerald-600 rounded-full'
+                            className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
                         >
                             Submit Event
                         </Button>
