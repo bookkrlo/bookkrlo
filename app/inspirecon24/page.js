@@ -294,7 +294,7 @@ export default function Page() {
                             </div>
                         </div>
                         <Button
-                            className='bg-primary-500 hover:bg-primary-600 rounded-full'
+                            className='bg-primary-600 hover:bg-primary-700 rounded-full'
                             onClick={() => setIsListEventModalOpen(true)}
                         >
                             List Your Event
@@ -483,7 +483,7 @@ export default function Page() {
                                         </div>
 
                                         <Button
-                                            className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
+                                            className='w-full bg-primary-600 hover:bg-primary-700 rounded-full'
                                             onClick={() => setIsModalOpen(true)}
                                         >
                                             Proceed to Checkout
@@ -888,7 +888,7 @@ export default function Page() {
                             )}
                             <Button
                                 type='submit'
-                                className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
+                                className='w-full bg-primary-600 hover:bg-primary-700 rounded-full'
                                 disabled={
                                     isProcessing ||
                                     (paymentMethod === 'bank_transfer' &&
