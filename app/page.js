@@ -62,7 +62,7 @@ export default function Component() {
                             </div>
                         </div>
                         <Button
-                            className='bg-emerald-500 hover:bg-emerald-600 rounded-full'
+                            className='bg-primary-600 hover:bg-primary-700 rounded-full'
                             onClick={() => setIsListEventModalOpen(true)}
                         >
                             List Your Event
