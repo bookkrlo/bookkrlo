@@ -176,7 +176,7 @@ export default function Component() {
                                 bookkrlo.info@gmail.com
                             </p>
                         </div>
-                        <div className='flex space-x-4 items-center justify-center'>
+                        <div className='flex flex-col items-center justify-center space-y-2'>
                             <Link
                                 href='/'
                                 className='text-2xl font-bold text-emerald-400 text-center'
