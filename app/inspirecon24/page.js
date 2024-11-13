@@ -741,7 +741,7 @@ export default function Page() {
                                 for details.
                             </p>
                             <Button
-                                className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
+                                className='w-full bg-primary-600 hover:bg-primary-700 rounded-full'
                                 onClick={resetForm}
                             >
                                 Close
@@ -757,7 +757,7 @@ export default function Page() {
                             </h3>
                             <p className='text-center'>{paymentError}</p>
                             <Button
-                                className='w-full bg-primary-500 hover:bg-primary-600 rounded-full'
+                                className='w-full bg-primary-600 hover:bg-primary-700 rounded-full'
                                 onClick={() => setPaymentError(null)}
                             >
                                 Try Again
