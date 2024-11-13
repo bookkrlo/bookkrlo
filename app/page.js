@@ -85,7 +85,7 @@ export default function Component() {
                 </div>
 
                 <div className='text-center max-w-2xl mx-auto mt-8'>
-                    <h1 className='text-4xl font-bold mb-2 text-emerald-400'>
+                    <h1 className='text-4xl font-bold mb-2 text-primary-500'>
                         Events
                     </h1>
                 </div>
@@ -109,7 +109,7 @@ export default function Component() {
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
                     <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
                         <div>
-                            <h3 className='text-lg font-semibold mb-4 text-white'>
+                            <h3 className='text-lg font-semibold mb-4 text-primary-600'>
                                 Socials
                             </h3>
                             <div className='flex space-x-4'>
@@ -169,7 +169,7 @@ export default function Component() {
                             </ul>
                         </div> */}
                         <div>
-                            <h3 className='text-lg font-semibold mb-4 text-white'>
+                            <h3 className='text-lg font-semibold mb-4 text-primary-600 text-center'>
                                 Contact
                             </h3>
                             <p className='text-gray-300'>
@@ -216,7 +216,7 @@ export default function Component() {
                     </div>
                     <Button
                         onClick={() => setIsListEventModalOpen(false)}
-                        className='bg-emerald-500 hover:bg-emerald-600 rounded-full'
+                        className='bg-primary-600 hover:bg-primary-700 rounded-full'
                     >
                         Close
                     </Button>
