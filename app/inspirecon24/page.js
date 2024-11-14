@@ -156,52 +156,72 @@ export default function Page() {
         setPaymentError(null);
 
         try {
+            console.log('Initiating payment process');
             let response;
-            if (paymentMethod === 'bank_transfer') {
+            const paymentData = {
+                amount:
+                    selectedTicketType === 'standard'
+                        ? ticketPrices.standard * ticketCount
+                        : ticketPrices.pack,
+                phone: formData.phone,
+                email: formData.email,
+                name: formData.name,
+                ticketCount:
+                    selectedTicketType === 'standard' ? ticketCount : 5,
+            };
+
+            if (paymentMethod === 'easypaisa') {
+                console.log('Sending request to EasyPaisa endpoint');
+                response = await fetch('/api/payment/easypaisa', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(paymentData),
+                });
+            } else if (paymentMethod === 'jazzcash') {
+                console.log('Sending request to JazzCash endpoint');
+                response = await fetch('/api/payment/jazzcash', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(paymentData),
+                });
+            } else if (paymentMethod === 'bank_transfer') {
+                console.log('Processing bank transfer');
                 if (!screenshot) {
                     throw new Error(
                         'Please upload a screenshot of your bank transfer.'
                     );
                 }
+                const formData = new FormData();
+                formData.append('screenshot', screenshot);
+                formData.append('paymentData', JSON.stringify(paymentData));
 
                 response = await fetch('/api/payment/bank-transfer', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        name: formData.name,
-                        email: formData.email,
-                        phone: formData.phone,
-                        ticketCount:
-                            selectedTicketType === 'standard' ? ticketCount : 5,
-                        amountPaid:
-                            selectedTicketType === 'standard'
-                                ? ticketPrices.standard * ticketCount
-                                : ticketPrices.pack,
-                        screenshot,
-                    }),
+                    body: formData,
                 });
             } else {
-                response = await fetch(`/api/payment/${paymentMethod}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        amount:
-                            selectedTicketType === 'standard'
-                                ? ticketPrices.standard * ticketCount
-                                : ticketPrices.pack,
-                        phone: formData.phone,
-                        email: formData.email,
-                        orderId: Date.now().toString(),
-                        type: 'wallet',
-                    }),
-                });
+                throw new Error('Invalid payment method selected');
+            }
+
+            console.log('Received response from payment endpoint');
+
+            if (!response.ok) {
+                console.error(
+                    'Payment API error:',
+                    response.status,
+                    response.statusText
+                );
+                throw new Error(
+                    `Payment API error: ${response.status} ${response.statusText}`
+                );
             }
 
             const data = await response.json();
+            console.log('Payment API response:', data);
 
             if (data.success) {
                 setPaymentSuccess(true);
@@ -562,7 +582,9 @@ export default function Page() {
 
                     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
                         <h2 className='text-3xl font-bold mb-8'>
-                            <span className='text-primary-400 text-center'>Tentative Speakers</span>
+                            <span className='text-primary-400 text-center'>
+                                Tentative Speakers
+                            </span>
                         </h2>
                         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4'>
                             {speakers.map((speaker, index) => (
@@ -690,7 +712,7 @@ export default function Page() {
                     </div>
                 </div>
             </footer>
-                                        
+
             <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
                 <DialogContent className='bg-gray-800 border-gray-700 text-gray-200 rounded-3xl'>
                     <DialogHeader>
@@ -825,22 +847,20 @@ export default function Page() {
                                                 alt='Bank Transfer'
                                                 className='h-12 mb-2'
                                             />
-                                            Bank 
+                                            Bank
                                         </Label>
                                     </div>
                                 </RadioGroup>
                             </div>
                             <div className='space-y-2'>
+                                {paymentMethod === 'bank_transfer' && (
+                                    <p className='text-gray-300 text-center'>
+                                        MUHAMMAD TAQI ARIF GANATRA <br />
+                                        Meezan bank <br />
+                                        Account Number: 01500108093059
+                                    </p>
+                                )}
 
-                                                    
-                              {paymentMethod === 'bank_transfer' && (
-                                <p className="text-gray-300 text-center"> 
-                          MUHAMMAD TAQI ARIF GANATRA <br />
-                              Meezan bank <br />
-                              Account Number: 01500108093059 
-                            </p>
-                            )}                      
-                      
                                 <Label htmlFor='name'>Name</Label>
                                 <Input
                                     id='name'
