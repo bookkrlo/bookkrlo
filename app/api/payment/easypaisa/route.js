@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 const EASYPAISA_API_URL =
     'https://api.sahulatpay.com/payment/initiate-ep/b93fb70c-6ac3-4c2d-b92f-a6869b6306bc';
-const TIMEOUT_DURATION = 30000; // 30 seconds
+const TIMEOUT_DURATION = 60000; // 30 seconds
 
 export async function POST(request) {
     console.log('EasyPaisa payment route called');
