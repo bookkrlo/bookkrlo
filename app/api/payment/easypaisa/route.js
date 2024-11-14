@@ -4,7 +4,7 @@ export async function POST(request) {
 
         // Format the request payload to match the API requirements
         const payload = {
-            orderId: body.orderId || `D${Date.now()}`, // Generate orderId if not provided
+          //  orderId: body.orderId || `D${Date.now()}`, // Generate orderId if not provided
             amount: body.amount.toString(),
             phone: body.phone,
             email: body.email,
